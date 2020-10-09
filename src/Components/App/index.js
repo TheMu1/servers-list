@@ -18,15 +18,15 @@ export default class App extends React.Component {
 
         return (
             <Router history={browserHistory()}>
-                <Switch>
-                    <Provider store={store}>
+                <Provider store={store}>
+                    <Switch>
                         <Route exact path="/login" component={Login}/>
                         <Route exact path="/" render={() => (
                             localStorage.getItem('token') ? <ListPage/> : <Redirect to={{pathname: '/login'}}/>
                         )}/>
                         <Route component={PageNotFound}/>
-                    </Provider>
-                </Switch>
+                    </Switch>
+                </Provider>
             </Router>
         )
     }
