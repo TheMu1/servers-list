@@ -1,0 +1,1 @@
+export const SET_SERVERS = 'SET_SERVERS';
