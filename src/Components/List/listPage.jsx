@@ -49,7 +49,7 @@ export default class ListPage extends React.Component {
                     });
                 }
             })
-            .catch(error => {
+            .catch(() => {
                 this.setState({
                     loading: false,
                     error: 'Some error occurred while fetching servers list. Please try again later.'
@@ -59,7 +59,7 @@ export default class ListPage extends React.Component {
 
     logout = () => {
         localStorage.removeItem('token');
-        this.props.logoutRequest(null);
+        this.props.logoutRequest;
         this.props.history.push('/login');
     };
 
@@ -86,7 +86,6 @@ export default class ListPage extends React.Component {
         }
         this.props.setServers(sortedData);
         this.setState({
-           // servers: sortedData,
             sort: {
                 column,
                 direction,
@@ -126,7 +125,7 @@ export default class ListPage extends React.Component {
                 dataIndex: 'distance',
                 onHeaderCell: () => this.onHeaderCellClick('distance'),
                 render: (value, row) => {
-                    return <div className="">{row.distance} (km)</div>
+                    return <div className="distance-col">{row.distance} (km) </div>
                 }
             }
         ];

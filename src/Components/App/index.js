@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, Redirect, Switch} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
 import {createBrowserHistory as browserHistory} from 'history';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
@@ -7,6 +7,7 @@ import rootReducer from '../../Reducers';
 import Login from '../Login';
 import ListPage from '../List';
 import PageNotFound from '../PageNotFound';
+import PrivateRoute from '../PrivateRoute';
 
 export default class App extends React.Component {
     render() {
@@ -21,9 +22,7 @@ export default class App extends React.Component {
                 <Provider store={store}>
                     <Switch>
                         <Route exact path="/login" component={Login}/>
-                        <Route exact path="/" render={() => (
-                            localStorage.getItem('token') ? <ListPage/> : <Redirect to={{pathname: '/login'}}/>
-                        )}/>
+                        <PrivateRoute exact path="/" component={ListPage}/>
                         <Route component={PageNotFound}/>
                     </Switch>
                 </Provider>

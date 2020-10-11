@@ -4,7 +4,7 @@ import {LOGOUT} from "../../Actions/login";
 
 const mapDispatchToProps = dispatch => {
     return {
-        logoutRequest: (token) => {dispatch({type: LOGOUT, token: token})}
+        logoutRequest: () => {dispatch({type: LOGOUT, token: null})}
     }
 };
 
