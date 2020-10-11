@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-css": "node-sass src/Styles/ -o src/Styles/",
-    "watch-css": "npm run build-css && node-sass src/Styles/ -o src/Styles/ --watch --recursive"
+    "build-css": "node-sass src/Styles/sass -o src/Styles/css",
+    "watch-css": "npm run build-css && node-sass src/Styles/sass -o src/Styles/css --watch --recursive"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
