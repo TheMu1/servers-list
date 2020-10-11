@@ -10,7 +10,7 @@ class LogoutBtn extends React.Component {
 
     handleLogout() {
         localStorage.removeItem('token');
-        this.props.logoutRequest;
+        this.props.logoutRequest();
         this.props.history.push('/login');
     }
 

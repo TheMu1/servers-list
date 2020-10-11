@@ -59,7 +59,7 @@ export default class ListPage extends React.Component {
 
     logout = () => {
         localStorage.removeItem('token');
-        this.props.logoutRequest;
+        this.props.logoutRequest();
         this.props.history.push('/login');
     };
 
